@@ -1,4 +1,5 @@
 
+
 PImage bg, soil,title,gameover;
 PImage groundHog,soldier,life1,life2,life3,cabbage;
 PImage restartHover,restartNormal,startHover,startNormal;
@@ -46,7 +47,7 @@ void setup() {
   soil= loadImage("img/soil.png");
   title=loadImage("img/title.jpg");
   gameover=loadImage("img/gameover.jpg");
-  groundHog= loadImage("img/groundhog.png");
+  groundHog= loadImage("img/groundhogldle.png");
   soldier= loadImage("img/soldier.png");
   cabbage= loadImage("img/cabbage.png");
   life1= loadImage("img/life.png");
