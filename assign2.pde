@@ -47,7 +47,7 @@ void setup() {
   soil= loadImage("img/soil.png");
   title=loadImage("img/title.jpg");
   gameover=loadImage("img/gameover.jpg");
-  groundHog= loadImage("img/groundhogldle.png");
+  groundHog= loadImage("img/groundhogIdle.png");
   soldier= loadImage("img/soldier.png");
   cabbage= loadImage("img/cabbage.png");
   life1= loadImage("img/life.png");
