@@ -30,7 +30,7 @@ int lifeSize=50;
 //grass
 int grassHeight=15;
 //soldier
-int soldierX=-80;
+int soldierX=0;
 int soldierY=160;
 int soldierSpeed=5;
 //hog
