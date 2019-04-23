@@ -1,8 +1,10 @@
 
 
+
 PImage bg, soil,title,gameover;
 PImage groundHog,soldier,life1,life2,life3,cabbage;
 PImage restartHover,restartNormal,startHover,startNormal;
+PImage hogUp,hogDown,hogRight,hogLeft;
 
 final int GAME_START=0;
 final int GAME_RUN=1;
@@ -37,6 +39,8 @@ int hogY=80;
 int hogDistance=80;
 //cabbage
 int cabbageX,cabbageY;
+//
+float timeSpeed=3;
 
 
 void setup() {
@@ -57,7 +61,9 @@ void setup() {
   restartNormal=loadImage("img/restartNormal.png");
   startHover=loadImage("img/startHovered.png");
   startNormal=loadImage("img/startNormal.png");
-  
+  hogDown=loadImage("img/groundhogDown.png");
+  hogRight=loadImage("img/groundhogRight.png");
+  hogLeft=loadImage("img/groundhogLeft.png");
   //soldier
  soldierY= 160+80*floor(random(4));
   //cabbage
@@ -91,7 +97,7 @@ void draw() {
       image(soil,0,160);        
       image(cabbage,cabbageX,cabbageY);
      //soldier
-      image(soldier,soldierX,soldierY);
+      image(soldier,soldierX-80,soldierY);
       soldierX+=soldierSpeed;
       soldierX %= 720;     
      //draw sun
@@ -186,7 +192,10 @@ void draw() {
             hogX=320;
             hogY=80;
             cabbageX=80*floor(random(8));
-            cabbageY=160+80*floor(random(4));                             
+            cabbageY=160+80*floor(random(4)); 
+            soldierX=-80;
+            soldierX+=soldierSpeed;
+            soldierY= 160+80*floor(random(4));
           }
       }else{
           image(restartNormal,248,360);
@@ -194,20 +203,16 @@ void draw() {
       break; 
    }
 }      		
-
-
+  
 void keyPressed(){
     switch(keyCode){
-      case UP:
-        hogY-=hogDistance;
-        if(hogY<80) hogY=80;
-      break;
+     
       case DOWN:
         hogY+=hogDistance;
         if(hogY>height-80) hogY=height-80;
       break;
-      case RIGHT:
-        hogX+=hogDistance;
+      case RIGHT:     
+        hogX+=hogDistance;        
         if(hogX>width-80) hogX=width-80; 
       break;
       case LEFT:
